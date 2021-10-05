@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+
+<h2>Update User</h2>
+<br>
+<form th:method="POST" th:action="@{/{id}(id=${users.getId()})}" th:object="${users}">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name"/>
+        <br>
+        <input type="submit" value="Update"/>
+    </div>
+</form>
+
+</body>
+
+</html>

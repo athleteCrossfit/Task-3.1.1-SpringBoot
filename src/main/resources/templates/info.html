@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new user</title>
+</head>
+<body>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+
+<form th:method="POST" th:action="@{/saveUser}" th:object="${users}">
+    <div>
+        <label for="name">Name</label>
+        <input type="text" th:field="*{name}" id="name"/>
+        <br/>
+        <input type="submit" value="Add"/>
+    </div>
+</form>
+
+</body>
+</html>

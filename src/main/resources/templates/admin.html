@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin's page</title>
+
+</head>
+<body>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+
+
+<h1>Admin's page</h1>
+
+
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+<br><br>
+
+
+
+        <a href="/new"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Add user</button></a>
+
+    <br>
+    <br>
+
+        <a href="updateUser"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Update user</button></a>
+
+    <br>
+    <br>
+
+        <a href="deleteUser"><button class="form-signin btn btn-lg btn-primary btn-block" type="submit" >Delete user</button></a>
+</body>
+</html>
